@@ -10,7 +10,6 @@
 		// подключаем все функции
 		include 'example_persons.php';
 		include 'splitName.php';
-		include 'shortName.php';
 		include 'getGender.php';
 
 		// выбираем рандомное имя из массива

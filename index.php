@@ -27,6 +27,7 @@
 		<p> <?php echo getShortName($fullname); ?> </p>
 
 		<h3>getGenderFromName:</h3>
+		<p> <?php echo getGenderFromName($fullname); ?> </p>
 	</div>
 </body>
 </html>

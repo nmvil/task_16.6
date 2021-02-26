@@ -17,4 +17,33 @@
 		}
 	}
 
+	function getGenderDescription($arr) {
+		$male = 0;
+		$female = 0;
+		$unspecified = 0;
+		$all = count($arr);
+
+		foreach ($arr as $key => $value) {
+			switch (getGenderFromName($value['fullname'])) {
+				case -1:
+					$female++;
+					break;
+				case 1:
+					$male++;
+					break;
+				default:
+					$unspecified++;
+					break;
+			}
+		}
+		$percentage = [
+			'male' => round(($male / $all) * 100, 1),
+			'female' => round(($female / $all) * 100, 1),
+			'unspecified' => round(($unspecified / $all) * 100, 1),
+
+		];
+
+		return $percentage;
+	}
+
 ?>

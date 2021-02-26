@@ -28,6 +28,17 @@
 
 		<h3>getGenderFromName:</h3>
 		<p> <?php echo getGenderFromName($fullname); ?> </p>
+
+		<h3>Гендерный состав аудитории:</h3>
+		<div class="genderD">
+			<?php 
+				$genderDesc = getGenderDescription($example_persons_array);
+
+				echo 'Мужчины - ' . $genderDesc['male'] . '<br>';
+				echo 'Женщины - ' . $genderDesc['female'] . '<br>';
+				echo 'Не удалось определить - ' . $genderDesc['unspecified'] . '<br>';
+			?>
+		</div>
 	</div>
 </body>
 </html>

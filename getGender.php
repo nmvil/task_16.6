@@ -1,5 +1,7 @@
 <?php
-
+	
+	// функция по определённым признакам возвращает пол человека
+	// -1 - женский пол, 0 - пол не удалось определить, 1 - мужской пол
 	function getGenderFromName($fullname) {
 		$nameArr = getPartsFromFullname($fullname);
 
@@ -17,6 +19,7 @@
 		}
 	}
 
+	// функция возвращает половой состав аудитории
 	function getGenderDescription($arr) {
 		$male = 0;
 		$female = 0;

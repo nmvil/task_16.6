@@ -7,10 +7,12 @@
 </head>
 <body>
 	<?php 
+		const WRONG_GENDER_ERROR = 'Пол заданного человека не может быть определён!';
 		// подключаем все функции
 		include 'example_persons.php';
 		include 'splitName.php';
 		include 'getGender.php';
+		include 'getPerfectPartner.php';
 
 		// выбираем рандомное имя из массива
 		$fullname = $example_persons_array[random_int(0, count($example_persons_array) - 1)]['fullname'];
@@ -29,7 +31,7 @@
 		<p> <?php echo getGenderFromName($fullname); ?> </p>
 
 		<h3>Гендерный состав аудитории:</h3>
-		<div class="genderD">
+		<div class="card">
 			<?php 
 				$genderDesc = getGenderDescription($example_persons_array);
 
@@ -38,6 +40,15 @@
 				echo 'Не удалось определить - ' . $genderDesc['unspecified'] . '<br>';
 			?>
 		</div>
+
+		<h3>getPerfectPartner:</h3>
+		<div class="card">
+			<?php
+				$name = getPartsFromFullname($fullname);
+				echo getPerfectPartner($name['surname'], $name['name'], $name['patronymic'], $example_persons_array);
+			?>
+		</div>
+
 	</div>
 </body>
 </html>
